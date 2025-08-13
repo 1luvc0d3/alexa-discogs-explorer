@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Explore music releases using the Discogs database",
+          "examplePhrases": [
+            "Alexa, ask discogs to list releases by The Beatles",
+            "Alexa, ask discogs to search for Abbey Road",
+            "Alexa, ask discogs for a random release"
+          ],
+          "keywords": [
+            "music",
+            "discogs",
+            "albums",
+            "releases",
+            "artists",
+            "vinyl",
+            "records"
+          ],
+          "name": "Discogs Explorer",
+          "description": "Explore the vast world of music with Discogs Explorer! This skill lets you search for music releases, discover albums by your favorite artists, and get random music recommendations from the comprehensive Discogs database. Whether you're looking for classic albums, rare releases, or want to discover something new, this skill has you covered.",
+          "largeIconUri": "https://your-domain.com/icons/discogs-large-icon-512x512.png",
+          "smallIconUri": "https://your-domain.com/icons/discogs-small-icon-108x108.png"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "To test this skill, try saying: 'list releases by The Beatles', 'search for Dark Side of the Moon', or 'give me a random release'.",
+      "category": "MUSIC_AND_AUDIO",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": ".",
+          "uri": "lambda_function.handler"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "https://your-domain.com/privacy-policy",
+          "termsOfUseUrl": "https://your-domain.com/terms-of-use"
+        }
+      }
+    }
+  }
+}

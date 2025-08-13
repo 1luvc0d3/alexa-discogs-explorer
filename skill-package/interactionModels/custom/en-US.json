@@ -1,0 +1,81 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "discogs",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ListReleasesIntent",
+                    "slots": [
+                        {
+                            "name": "artist",
+                            "type": "AMAZON.MusicCreativeWork"
+                        }
+                    ],
+                    "samples": [
+                        "list releases by {artist}",
+                        "show me releases by {artist}",
+                        "what releases does {artist} have",
+                        "find releases by {artist}",
+                        "get releases from {artist}",
+                        "tell me about {artist} releases",
+                        "what albums does {artist} have",
+                        "show me {artist} albums"
+                    ]
+                },
+                {
+                    "name": "SearchReleaseIntent",
+                    "slots": [
+                        {
+                            "name": "release",
+                            "type": "AMAZON.MusicAlbum"
+                        }
+                    ],
+                    "samples": [
+                        "search for {release}",
+                        "find {release}",
+                        "look for {release}",
+                        "search for the album {release}",
+                        "find the release {release}",
+                        "look up {release}",
+                        "search {release}"
+                    ]
+                },
+                {
+                    "name": "RandomReleaseIntent",
+                    "slots": [],
+                    "samples": [
+                        "give me a random release",
+                        "random release",
+                        "surprise me",
+                        "give me something random",
+                        "random album",
+                        "pick something for me",
+                        "recommend something",
+                        "what should I listen to"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
