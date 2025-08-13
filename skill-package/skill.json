@@ -33,7 +33,7 @@
       "custom": {
         "endpoint": {
           "sourceDir": ".",
-          "uri": "lambda_function.handler"
+          "uri": "index.handler"
         },
         "interfaces": []
       }

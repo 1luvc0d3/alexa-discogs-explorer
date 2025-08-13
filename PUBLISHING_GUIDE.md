@@ -1,4 +1,4 @@
-# Alexa Skill Publishing Guide - Discogs Music Explorer
+# Alexa Skill Publishing Guide - Discogs Music Explorer (Node.js)
 
 ## Pre-Publishing Checklist
 
@@ -32,6 +32,8 @@
 
 #### Lambda Function
 - [ ] Deploy to AWS Lambda with proper IAM role
+- [ ] Set runtime to Node.js 18.x or later
+- [ ] Set handler to `index.handler`
 - [ ] Test all intents work correctly
 - [ ] Verify error handling
 - [ ] Check response times (< 8 seconds)
@@ -73,20 +75,25 @@
 
 ### Step 2: Deploy Lambda Function
 
-1. **Build deployment package**:
+1. **Install dependencies**:
    ```bash
-   python deploy.py
+   npm install
    ```
 
-2. **Deploy to AWS Lambda**:
+2. **Build deployment package**:
+   ```bash
+   npm run deploy
+   ```
+
+3. **Deploy to AWS Lambda**:
    ```bash
    # Using AWS CLI
    aws lambda create-function \
        --function-name alexa-discogs-skill \
-       --runtime python3.9 \
+       --runtime nodejs18.x \
        --role arn:aws:iam::YOUR_ACCOUNT:role/lambda-execution-role \
-       --handler lambda_function.handler \
-       --zip-file fileb://alexa-discogs-skill-python.zip
+       --handler index.handler \
+       --zip-file fileb://alexa-discogs-skill-nodejs.zip
    ```
 
 3. **Configure Alexa Skills Kit trigger** in AWS Lambda console
@@ -143,24 +150,26 @@
 
 ### Deploy Lambda Function
 ```bash
-# Build and deploy
-python deploy.py
+# Install dependencies and build
+npm install
+npm run deploy
 
 # Update existing function
 aws lambda update-function-code \
     --function-name alexa-discogs-skill \
-    --zip-file fileb://alexa-discogs-skill-python.zip
+    --zip-file fileb://alexa-discogs-skill-nodejs.zip
 ```
 
 ### Test Locally
 ```bash
-# Install test dependencies
-pip install ask-sdk-local-debug
+# Validate skill configuration
+npm run validate
+
+# Install local debug tool globally
+npm install -g ask-sdk-local-debug
 
 # Run local test server
-python -m ask_sdk_local_debug.local_debugger \
-    --file lambda_function.py \
-    --handler handler
+ask-sdk-local-debug --file index.js --handler handler
 ```
 
 ## Sample Legal Documents
